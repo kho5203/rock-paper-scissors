@@ -5,14 +5,26 @@ console.log("Hello World!");
 function getComputerChoice() {
   const randomNumber = Math.floor(Math.random() * 3) + 1;
   if (randomNumber === 1) {
-    console.log(randomNumber);
+    console.log("Computer Choice Number: ", randomNumber);
     return "rock";
   } else if (randomNumber === 2) {
-    console.log(randomNumber);
+    console.log("Computer Choice Number: ", randomNumber);
     return "paper";
   } else {
-    console.log(randomNumber);
+    console.log("Computer Choice Number: ", randomNumber);
     return "scissors";
   }
 }
-console.log(getComputerChoice());
+console.log("Computer Choice: ", getComputerChoice());
+
+// Prompt user for game options
+// Handle user options using toLowerCase
+// Return human choice in console
+function getHumanChoice() {
+  const humanChoice = prompt(
+    "Choose rock, paper, or scissors:",
+    "",
+  ).toLowerCase();
+  return humanChoice;
+}
+console.log("Human Choice: ", getHumanChoice());
