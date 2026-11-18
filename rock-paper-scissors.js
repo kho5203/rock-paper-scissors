@@ -9,45 +9,31 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  const humanChoice = prompt(
-    "Choose rock, paper, or scissors:",
-    "",
-  ).toLowerCase();
-  return humanChoice;
-}
-
-function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
-  let roundNumber = 1;
-
-  function playRound(humanChoice, computerChoice) {
-    if (humanChoice === computerChoice) {
-      console.log("It's a tie!");
-    } else if (
-      (humanChoice === "rock" && computerChoice === "scissors") ||
-      (humanChoice === "paper" && computerChoice === "rock") ||
-      (humanChoice === "scissors" && computerChoice === "paper")
-    ) {
-      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-      humanScore++;
-    } else {
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
-      computerScore++;
-    }
-  }
-
-  console.log("GAME OVER! \nHere are the game stats: ");
-  console.log(`Human Score: ${humanScore}`);
-  console.log(`Computer Score: ${computerScore}`);
-  if (humanScore > computerScore) {
-    console.log("Human wins!");
-  } else if (computerScore > humanScore) {
-    console.log("Computer wins!");
-  } else {
+let humanScore = 0;
+let computerScore = 0;
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
     console.log("It's a tie!");
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+    humanScore++;
+  } else {
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+    computerScore++;
   }
 }
 
-playGame();
+console.log("GAME OVER! \nHere are the game stats: ");
+console.log(`Human Score: ${humanScore}`);
+console.log(`Computer Score: ${computerScore}`);
+if (humanScore > computerScore) {
+  console.log("Human wins!");
+} else if (computerScore > humanScore) {
+  console.log("Computer wins!");
+} else {
+  console.log("It's a tie!");
+}
